@@ -1,7 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { DatabaseModule } from '../database/database.module';
 import { WinnersController } from './winners.controller';
-import { winnersProviders } from './winners.providers';
 import { WinnersService } from './winners.service';
 
 describe('WinnersController', () => {
