@@ -9,9 +9,11 @@ describe('WinnersController', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      imports: [DatabaseModule],
       controllers: [WinnersController],
-      providers: [WinnersService, ...winnersProviders],
+      providers: [WinnersService, {
+        provide: WinnersService,
+        useValue: []
+      }],
     }).compile();
 
     controller = module.get<WinnersController>(WinnersController);
