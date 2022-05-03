@@ -5,6 +5,9 @@ import { CreatePlayerDto } from './dto/winners.dto';
 
 @Injectable()
 export class WinnersService {
+
+  hola:number = 3;
+  
   constructor(
     @Inject('PLAYER_MODEL')
     private playerModel: Model<Player>,
@@ -13,8 +16,8 @@ export class WinnersService {
   ) {}
 
   async createPlayer(createPlayerDto: CreatePlayerDto): Promise<Player> {
-    const CreatedPlayer = new this.playerModel(createPlayerDto);
-    return CreatedPlayer.save();
+    const createdPlayer = new this.playerModel(createPlayerDto);
+    return createdPlayer.save();
   }
 
   async findAllPlayers(): Promise<Player[]> {
