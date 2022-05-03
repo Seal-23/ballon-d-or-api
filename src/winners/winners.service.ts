@@ -13,8 +13,8 @@ export class WinnersService {
   ) {}
 
   async createPlayer(createPlayerDto: CreatePlayerDto): Promise<Player> {
-    const createdPlayer = new this.playerModel(createPlayerDto);
-    return createdPlayer.save();
+    const CreatedPlayer = new this.playerModel(createPlayerDto);
+    return CreatedPlayer.save();
   }
 
   async findAllPlayers(): Promise<Player[]> {
